@@ -1,0 +1,13 @@
+Docker Commands
+To build and run each service locally:
+
+Build Images:
+
+bash
+docker build -t order-service ./order-service
+docker build -t inventory-service ./inventory-service
+Run Containers:
+
+bash
+docker run -d -p 8000:8000 order-service
+docker run -d -p 8001:8001 inventory-service

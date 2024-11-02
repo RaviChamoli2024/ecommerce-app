@@ -1,0 +1,10 @@
+Testing with Postman
+Use Postman to interact with your services:
+
+Order Service:
+POST http://<minikube-ip>:<node-port>/create-order
+GET http://<minikube-ip>:<node-port>/order/{order_id}
+
+Inventory Service:
+POST http://<minikube-ip>:<node-port>/reserve-stock
+GET http://<minikube-ip>:<node-port>/stock/{product_id}
