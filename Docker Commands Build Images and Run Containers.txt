@@ -5,7 +5,10 @@ Build Images:
 
 bash
 docker build -t order-service ./order-service
+docker build -t order-service .
+
 docker build -t inventory-service ./inventory-service
+docker build -t inventory-service .
 Run Containers:
 
 bash
