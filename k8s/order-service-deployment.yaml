@@ -15,6 +15,7 @@ spec:
       containers:
       - name: order-service
         image: order-service:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 8000
 ---
@@ -25,7 +26,9 @@ metadata:
 spec:
   selector:
     app: order-service
+  type: NodePort
   ports:
-  - protocol: "TCP"
+  - protocol: TCP
     port: 80
     targetPort: 8000
+    nodePort: 30500
