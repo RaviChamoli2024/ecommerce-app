@@ -15,6 +15,7 @@ spec:
       containers:
       - name: inventory-service
         image: inventory-service:latest
+        imagePullPolicy: Never
         ports:
         - containerPort: 8001
 ---
@@ -23,9 +24,11 @@ kind: Service
 metadata:
   name: inventory-service
 spec:
+  type: NodePort
   selector:
     app: inventory-service
   ports:
-  - protocol: "TCP"
+  - protocol: TCP
     port: 80
     targetPort: 8001
+    nodePort: 30501
