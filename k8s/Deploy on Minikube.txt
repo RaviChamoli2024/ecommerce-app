@@ -2,13 +2,12 @@ Deploy on Minikube
 Start Minikube:
 
 bash
-minikube start
-Deploy Services:
+minikube start --driver=docker
+& minikube -p minikube docker-env --shell powershell | Invoke-Expression
+minikube docker-env
 
-bash
+
 kubectl apply -f k8s/order-service-deployment.yaml
 kubectl apply -f k8s/inventory-service-deployment.yaml
-Access Kubernetes Dashboard:
 
-bash
 minikube dashboard
